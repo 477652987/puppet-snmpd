@@ -8,7 +8,6 @@
 
 class snmpd::conf 
 (
-    $directory = directory,
     $file      = file
 )
 inherits snmpd::params 
@@ -17,7 +16,7 @@ inherits snmpd::params
         ensure  => $file,
         owner   => "root",
         group   => "root",
-        mode    => "0755",
+        mode    => "0644",
         require => Package[$package_name]
     }
     
