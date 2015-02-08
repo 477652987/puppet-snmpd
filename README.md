@@ -12,7 +12,7 @@ Use:
 
   insert =>  include puppet-snmpd
 
-
+4. vim templates/snmpd.erb
 
 Help:
 
