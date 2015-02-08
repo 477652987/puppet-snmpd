@@ -1,0 +1,19 @@
+# -=-=-=-=-=-=-=-=config start=-=-=-=-=-=-=-=-
+# snmpd config from puppet
+# dev : zhangjie@117go.com
+# last modifily : 2015-02-08
+# travo .inc
+# puppet master root: /etc/puppet/modules/snmpd/templates/snmpd.erb
+# -=-=-=-=-=-=-=-=config start=-=-=-=-=-=-=-=-
+
+
+com2sec notConfigUser  112.124.64.127    monitor117go
+group   notConfigGroup v1           notConfigUser
+group   notConfigGroup v2c           notConfigUser
+view    all     included        .1      80
+access  notConfigGroup ""      any       noauth    exact  all none none
+syslocation Unknown (edit /etc/snmp/snmpd.conf)
+syscontact Root <root@localhost> (configure /etc/snmp/snmp.local.conf)
+<% @mounts_point.each do |val| -%>
+<%= val %>
+<% end -%>
